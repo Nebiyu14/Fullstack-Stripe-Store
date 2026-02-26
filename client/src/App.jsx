@@ -1,12 +1,10 @@
-import { useState } from "react";
 import "./App.css";
+import PageRoutes from "./routes/PageRoutes";
 
 function App() {
   return (
     <>
-      <div>
-        <h2>E Commerce</h2>
-      </div>
+      <PageRoutes />
     </>
   );
 }

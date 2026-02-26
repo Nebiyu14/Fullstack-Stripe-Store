@@ -1,0 +1,49 @@
+.card__container {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin: 2rem;
+  padding: 1em;
+}
+
+.card__image {
+  text-align: center;
+  margin-bottom: 5px;
+}
+.card__image img {
+  width: 100px;
+  height: auto;
+}
+
+.card__title {
+  color: rgb(13, 13, 50);
+  font-weight: bolder;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.card__price__rating {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.card__add_to_cart_btn {
+  text-align: center;
+}
+.card__add_to_cart_btn button {
+  border: none;
+  background-color: transparent;
+  background-color: gold;
+  width: 100%;
+  padding: 3px 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.card__add_to_cart_btn button:active {
+  background-color: rgba(255, 217, 0, 0.874);
+}

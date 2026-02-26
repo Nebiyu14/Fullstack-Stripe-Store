@@ -1,0 +1,30 @@
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+  background-color: green;
+}
+
+.header__brand__name {
+  color: goldenrod;
+}
+
+.header__nav__links {
+  display: flex;
+  gap: 20px;
+}
+
+.header__nav__links {
+  text-decoration: none;
+  font-size: 18px;
+  list-style: none;
+}
+
+.header__cart {
+  display: flex;
+  gap: 5px;
+  font-size: 18px;
+  align-items: center;
+}
