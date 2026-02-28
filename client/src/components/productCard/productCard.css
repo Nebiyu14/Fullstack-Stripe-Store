@@ -1,6 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap");
+
 .card {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background: #f5f0ea;
+  min-height: 100vh;
+}
+
+/* Loading */
+.product__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 1rem;
+  font-family: "DM Sans", sans-serif;
+  color: #282522;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.product__loading__spinner {
+  width: 40px;
+  height: 40px;
+  color: black;
+  border: 2px solid black;
+  border-radius: 50%;
+  border: 3px solid #ede6dc;
+  border-left-color: rgba(255, 0, 0, 0.55);
+  /* border-top-color: #c8916a; */
+  animation-name: loadingProduct;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loadingProduct {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error */
+.product__error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 0.5rem;
+  font-family: "DM Sans", sans-serif;
+  text-align: center;
+  padding: 2rem;
+}
+
+.product__error__title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  color: #1c1610;
+  margin: 0;
+}
+
+.product__error__msg {
+  font-size: 0.85rem;
+  color: #c0392b;
+  margin: 0;
+}
+
+.product__error__status {
+  font-size: 0.78rem;
+  color: #a89080;
+  margin: 0;
 }

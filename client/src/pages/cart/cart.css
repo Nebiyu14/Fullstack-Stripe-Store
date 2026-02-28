@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap");
+
+/* ── Page ── */
+.cart__page__container {
+  font-family: "DM Sans", sans-serif;
+  /* min-height: 100vh; */
+  background: #f5f0ea;
+  padding: 2rem 2.5rem;
+  box-sizing: border-box;
+}
+
+/* ── Header ── */
+.cart__header__title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #1c1610;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.8rem 0;
+  padding-left: 1rem;
+  border-left: 4px solid #c8916a;
+  background-color: rgba(222, 184, 135, 0.443);
+  border-radius: 0 10px 10px 0;
+}
+
+/* ── Body: side by side ── */
+.cart__body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* ── Left: scrollable list ── */
+.cart__items__list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding-right: 0.5rem;
+}
+
+/* Empty state */
+.cart__empty {
+  display: flex;
+  /* width: 100%; */
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  padding: 9rem 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px dashed #c8916a;
+}
+
+.cart__empty p {
+  /* font-family: "Playfair Display", serif; */
+  font-size: 1.5rem;
+  color: #a89080;
+  margin: 0;
+}
+
+.cart__start__shopping {
+  display: flex;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.546);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  padding-top: 0.2rem;
+  transition: color 0.2s;
+  border-radius: 10px;
+  padding: 0.1rem 0.5rem;
+}
+
+.cart__start__shopping:hover {
+  border: 1px solid rgba(135, 16, 16, 0.288);
+  color: rgb(135, 16, 16);
+}
+
+/* ── Right: sticky summary ── */
+.cart__summary {
+  min-width: 250px;
+  flex-shrink: 0;
+  background: #1c1610;
+  border-radius: 20px;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.cart__summary__title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 0.3rem 0;
+  letter-spacing: 0.01em;
+}
+
+.cart__summary__row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 300;
+}
+
+.cart__summary__free {
+  color: #c8916a;
+  font-weight: 500;
+}
+
+.cart__summary__divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0.2rem 0;
+}
+
+.cart__summary__total {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+
+/* Checkout button */
+.cart__checkout__btn {
+  width: 100%;
+  padding: 0.85rem;
+  margin-top: 0.4rem;
+  background: #c8916a;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.cart__checkout__btn:hover {
+  background: #b07850;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(200, 145, 106, 0.35);
+}
+
+.cart__checkout__btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.cart__checkout__btn__disabled {
+  width: 100%;
+  padding: 0.85rem;
+  margin-top: 0.4rem;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+/* Continue shopping */
+.cart__continue {
+  display: block;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  padding-top: 0.2rem;
+  transition: color 0.2s;
+}
+
+.cart__continue:hover {
+  color: #c8916a;
+}
+
+/* ======== */
+/* media query */
+/* ======== */
+@media (max-width: 768px) {
+  .cart__body {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .cart__items__list {
+    width: 100%;
+  }
+  .cart__summary {
+    width: 100%;
+  }
+}

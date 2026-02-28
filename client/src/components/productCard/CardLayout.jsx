@@ -1,28 +1,37 @@
 import React from "react";
 import "./cardLayout.css";
 import Rating from "@mui/material/Rating";
+import { useCart } from "../../context/CartContext";
 
-function CardLayout({ product }) {
+function CardLayout({ singleProduct, flex }) {
+  const { add_to_cart } = useCart();
+
+  const addToCart = (singleProduct) => {
+    add_to_cart(singleProduct);
+  };
+
   return (
     <div className="card__container">
       <div className="card__image">
-        <img src={product.image} alt="product image here" />
+        <img src={singleProduct?.image} alt="product" />
       </div>
       <div className="card__title">
-        <p>{product.title}</p>
+        <p>{singleProduct?.title}</p>
       </div>
       <div className="card__price__rating">
         <Rating
           name="half-rating-read"
-          defaultValue={product.rating.rate}
+          defaultValue={singleProduct?.rating?.rate}
           precision={0.5}
           size="small"
           readOnly
         />
-        <p>$ {product.price}</p>
+        <p>$ {singleProduct?.price}</p>
       </div>
       <div className="card__add_to_cart_btn">
-        <button>Add To Cart</button>
+        {flex && (
+          <button onClick={() => addToCart(singleProduct)}>Add To Cart</button>
+        )}
       </div>
     </div>
   );

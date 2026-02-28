@@ -1,30 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap");
+
 .navbar__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #333;
-  background-color: green;
+  padding: 0 2rem;
+  height: 64px;
+  background: #1c1610;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 20px rgba(28, 22, 14, 0.18);
+  border-bottom: 1px solid rgba(200, 145, 106, 0.15);
+}
+
+/* Brand */
+.header__brand__name a {
+  text-decoration: none;
+  color: #c8916a;
 }
 
 .header__brand__name {
-  color: goldenrod;
+  font-family: "Playfair Display", serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #c8916a;
+  margin: 0;
+  user-select: none;
 }
 
+/* Nav Links */
 .header__nav__links {
   display: flex;
-  gap: 20px;
-}
-
-.header__nav__links {
-  text-decoration: none;
-  font-size: 18px;
+  gap: 0.3rem;
   list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
 }
 
-.header__cart {
+.header__nav__links li a {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.header__nav__links li a:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* Cart */
+.header__cart__link {
   display: flex;
-  gap: 5px;
-  font-size: 18px;
   align-items: center;
+  gap: 6px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid rgba(200, 145, 106, 0.3);
+  border-radius: 30px;
+  position: relative;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.header__cart__link:hover {
+  color: #ffffff;
+  border-color: #c8916a;
+  background: rgba(200, 145, 106, 0.1);
+}
+
+/* Badge */
+.header__cart__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  background: #c8916a;
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+/* ===================================== */
+/* ===================================== */
+
+@media (max-width: 768px) {
+  .header__nav__links {
+    display: none;
+  }
 }
