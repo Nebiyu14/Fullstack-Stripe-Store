@@ -27,15 +27,15 @@ The payment process is handled **inside the application**, allowing users to com
 
 ## Screenshots
 
-### Homepage
+### Home Page
 
 ![Homepage](assets/homePage.jpg)
 
-### Checkout
+### Cart Page
 
 ![Cart Page](assets/cartPage.jpg)
 
-### Payment Success
+### Checkout Page
 
 ![Checkut Page](assets/checkoutPage.jpg)
 
