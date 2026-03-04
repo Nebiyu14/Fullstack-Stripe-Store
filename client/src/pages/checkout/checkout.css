@@ -25,13 +25,13 @@
   align-items: flex-start;
 }
 
-.checkout__left {
+.checkout__left_payment {
   flex: 2;
   /* width: 100%; */
   /* flex: 2; */
 }
 
-.checkout__right {
+.checkout__right_summary {
   flex: 1;
   /* position: sticky; */
   /* top: 84px; */
@@ -43,8 +43,8 @@
   .checkout__body {
     flex-direction: column-reverse;
   }
-  .checkout__right {
-    position: static;
+  .checkout__right_summary, .checkout__left_payment {
+    /* position: static; */
     width: 100%;
   }
 }

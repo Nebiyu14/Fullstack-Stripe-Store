@@ -45,14 +45,14 @@ function Checkout() {
       <h2 className="checkout__header__title">Checkout</h2>
 
       <div className="checkout__body">
-        <div className="checkout__left">
+        <div className="checkout__left_payment">
           {clientSecret && (
             <Elements stripe={stripePromise} options={{ clientSecret }}>
               <CheckoutForm />
             </Elements>
           )}
         </div>
-        <div className="checkout__right">
+        <div className="checkout__right_summary">
           <OrderSummary />
         </div>
       </div>

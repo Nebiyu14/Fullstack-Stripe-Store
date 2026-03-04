@@ -61,6 +61,11 @@ function Cart() {
                   : "cart__checkout__btn"
               }
               disabled={cart.length === 0}
+              title={
+                cart.length === 0
+                  ? "Add at least one item to proceed"
+                  : "Go to payment page"
+              }
             >
               Proceed to Checkout
             </button>
