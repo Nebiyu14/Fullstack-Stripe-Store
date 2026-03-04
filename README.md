@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project is a full-stack e-commerce application developed with React and Node.js with integrated Stripe payments using PaymentIntent and the embedded PaymentElement. 
+This project is a full-stack e-commerce application developed with React and Node.js with integrated Stripe payments using PaymentIntent and the embedded PaymentElement.
 
 The payment process is handled **inside the application**, allowing users to complete checkout without being redirected to a Stripe-hosted page and the user interface is **fully responsive** on desktop, tablet, and mobile devices.
 
@@ -11,28 +11,47 @@ The payment process is handled **inside the application**, allowing users to com
 ## Tech Stack
 
 ### Frontend
+
 - React (Vite)
 - React Router
 - Context API (Global Cart State)
 - Stripe.js
 
 ### Backend
+
 - Node.js
 - Express
 - Stripe API (PaymentIntent)
 
+---
+
+## Screenshots
+
+### Homepage
+
+![Homepage](assets/homePage.jpg)
+
+### Checkout
+
+![Cart Page](assets/cartPage.jpg)
+
+### Payment Success
+
+![Checkut Page](assets/checkoutPage.jpg)
 
 ---
 
 ## Features
 
 ### Cart System
+
 - Add/remove products
 - Update item quantity
 - Dynamic total price calculation
 - Cart persistence using localStorage
 
 ### Secure Stripe Checkout
+
 - Backend endpoint creates Stripe PaymentIntent
 - Client receives `clientSecret`
 - Stripe PaymentElement handles secure card collection
@@ -41,11 +60,13 @@ The payment process is handled **inside the application**, allowing users to com
 - Cart cleared only after confirmed successful payment
 
 ### Payment Status Handling
+
 - Displays "Processing", "Success", or "Failure"
 - Prevents false-positive success pages
 - Conditional rendering based on real Stripe status
 
 ### Architecture
+
 - Separate frontend and backend folders
 - Environment variable management
 - Structured for future scalability
@@ -63,7 +84,6 @@ The payment process is handled **inside the application**, allowing users to com
 - Managing environment variables securely
 
 ---
-
 
 ## Upcoming Features
 
@@ -177,6 +197,6 @@ Steps:
 
 ### Notes
 
-* Backend must be running before the frontend
-* Stripe is in test mode (no real charges)
-* Update ports in `.env` if changed
+- Backend must be running before the frontend
+- Stripe is in test mode (no real charges)
+- Update ports in `.env` if changed
