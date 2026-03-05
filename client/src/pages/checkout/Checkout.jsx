@@ -51,9 +51,13 @@ function Checkout() {
     navigate("/");
   }
 
-  if (!clientSecret) {
-    return <div className="checkout__loading">Preparing secure payment...</div>;
-  }
+  if (!clientSecret)
+    return (
+      <div className="product__loading">
+        <div className="product__loading__spinner"></div>
+        <p>Preparing secure payment...</p>
+      </div>
+    );
 
   return (
     <div className="checkout__container">
