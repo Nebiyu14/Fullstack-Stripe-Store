@@ -4,14 +4,12 @@ import express from "express";
 import Stripe from "stripe";
 import cors from "cors";
 
-
 const app = express();
 
 if (!process.env.STRIPE_SECRET_KEY) {
   throw new Error("Missing STRIPE_SECRET_KEY in server");
 }
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-
 
 // middleware
 app.use(express.json());
@@ -32,7 +30,10 @@ app.post("/create-payment-intent", async (req, res) => {
     const productResponse = await fetch("https://fakestoreapi.com/products");
 
     if (!productResponse.ok) {
-      return res.status(502).json({ error: "Failed to load products" });
+      return res.status(502).json({
+        error: "Failed to load products",
+        details: `fakestore status: ${productResponse.status} ${productResponse.statusText}`,
+      });
     }
 
     const products = await productResponse.json();
@@ -43,7 +44,11 @@ app.post("/create-payment-intent", async (req, res) => {
       const itemId = Number(item?.id);
       const quantity = Number(item?.quantity);
 
-      if (!Number.isInteger(itemId) || !Number.isInteger(quantity) || quantity <= 0) {
+      if (
+        !Number.isInteger(itemId) ||
+        !Number.isInteger(quantity) ||
+        quantity <= 0
+      ) {
         return res.status(400).json({ error: "Invalid cart data" });
       }
 
@@ -55,7 +60,9 @@ app.post("/create-payment-intent", async (req, res) => {
 
       const productPrice = Number(product.price);
       if (!Number.isFinite(productPrice) || productPrice < 0) {
-        return res.status(400).json({ error: `Invalid product price for ID: ${itemId}` });
+        return res
+          .status(400)
+          .json({ error: `Invalid product price for ID: ${itemId}` });
       }
 
       totalPrice += productPrice * quantity;
