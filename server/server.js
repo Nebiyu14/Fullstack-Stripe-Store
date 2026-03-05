@@ -3,6 +3,7 @@ dotenv.config();
 import express from "express";
 import Stripe from "stripe";
 import cors from "cors";
+import fs from "fs";
 
 const app = express();
 
@@ -15,6 +16,11 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 app.use(express.json());
 app.use(cors());
 
+//read file from products
+const fileData = fs.readFileSync("data/products.json", "utf-8");
+const products = JSON.parse(fileData);
+
+
 app.get("/", (req, res) => {
   res.status(200).send("Backend server is running...");
 });
@@ -26,17 +32,6 @@ app.post("/create-payment-intent", async (req, res) => {
     if (!Array.isArray(cartItems) || cartItems.length === 0) {
       return res.status(400).json({ error: "Cart is empty!" });
     }
-
-    const productResponse = await fetch("https://fakestoreapi.com/products");
-
-    if (!productResponse.ok) {
-      return res.status(502).json({
-        error: "Failed to load products",
-        details: `fakestore status: ${productResponse.status} ${productResponse.statusText}`,
-      });
-    }
-
-    const products = await productResponse.json();
 
     let totalPrice = 0;
 
