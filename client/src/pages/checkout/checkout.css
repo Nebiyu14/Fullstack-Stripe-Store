@@ -9,6 +9,12 @@
   width: 100%;
 }
 
+.checkout__loading {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
 .checkout__header__title {
   font-family: "Playfair Display", serif;
   font-size: 1.9rem;
@@ -43,7 +49,8 @@
   .checkout__body {
     flex-direction: column-reverse;
   }
-  .checkout__right_summary, .checkout__left_payment {
+  .checkout__right_summary,
+  .checkout__left_payment {
     /* position: static; */
     width: 100%;
   }
