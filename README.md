@@ -8,6 +8,22 @@ The payment process is handled **inside the application**, allowing users to com
 
 ---
 
+## Live Demo
+
+You can try the app here: [view the website](https://shop-flow-subi.vercel.app/)
+
+Use Stripe test card details:
+
+```
+4242 4242 4242 4242
+Any future date
+Any CVC
+```
+
+> Note: This only works in **test mode**. Do **not** use real card information.
+
+---
+
 ## Tech Stack
 
 ### Frontend
