@@ -99,7 +99,7 @@ Planned next integrations:
 
 ## How to Run the Project
 
-> Requirements: Node.js (v16+) and npm
+> Requirements: Node.js (v18+) and npm
 
 ---
 

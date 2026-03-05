@@ -26,12 +26,17 @@ app.post("/create-payment-intent", async (req, res) => {
 
     //fetch the product from fakestoreapi for calculating the price
     const response = await fetch("https://fakestoreapi.com/products");
+
+    if (!response.ok)
+      throw new Error("Failed to fetch the product API in server");
+    console.log("Fetching products from FakeStore API");
     const products = await response.json();
 
     // //calculate the total price in here backend
     let totalPrice = 0;
     for (let item of cartItems) {
-      const product = products.find((p) => p.id === item.id);
+      const product = products.find((p) => p.id === Number(item.id));
+      console.log("single porduct:", product);
       if (!product)
         return res.status(400).json({ error: "Invalid product ID" });
       totalPrice = totalPrice + product.price * item.quantity;

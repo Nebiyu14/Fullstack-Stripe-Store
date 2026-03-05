@@ -16,7 +16,7 @@ function Checkout() {
   const navigate = useNavigate();
   const { cart } = useCart();
   const [clientSecret, setClientSecret] = useState("");
-
+  console.log("backend url: ", import.meta.env.VITE_BACKEND_BASE_URL);
   useEffect(() => {
     const fetchClientSecret = async () => {
       console.log("checkout.jsx: checkout page mounted");
